@@ -1,0 +1,15 @@
+<h1><%= @trip.name %></h1>
+<h2>Trails:</h2>
+<ul>
+  <% @trails.each do |trail| %>
+
+    <li id="trail-<%= trail.id %>">
+      <h3><%= trail.name %></h3>
+      <ul>
+        <li>Start point: <%= trail.address %></li>
+        <li><%= trail.length %> miles</li>
+      </ul>
+    </li>
+
+  <% end %>
+</ul>
