@@ -7,6 +7,15 @@ describe 'the trip show page' do
     visit trip_path(trip_1)
     expect(page).to have_content(trip_1.name)
     expect(page).to have_content("Total Distance: 110")
+    expect(page).to have_content("Average Trail Length: 55")
+    within "#longest-trail" do
+      expect(page).to have_content("Longest Trail on Trip: #{trail_1.name}")
+      expect(page).to have_content("#{trail_1.length} miles")
+    end
+    within "#shortest-trail" do
+      expect(page).to have_content("Shortest Trail on Trip: #{trail_2.name}")
+      expect(page).to have_content("#{trail_2.length} miles")
+    end
     within "#trail-#{trail_1.id}" do
       expect(page).to have_content(trail_1.name)
       expect(page).to have_content(trail_1.address)

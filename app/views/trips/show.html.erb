@@ -1,6 +1,19 @@
 <h1><%= @trip.name %></h1>
 <ul>
   <li>Total Distance: <%= @trip.total_distance %></li>
+  <li>Average Trail Length: <%= @trip.average_length%></li>
+  <% if @longest_trail %>
+    <li id="longest-trail">
+      Longest Trail on Trip: <%= @longest_trail.name %> |
+      <%= @longest_trail.length %> miles
+    </li>
+  <% end %>
+  <% if @shortest_trail %>
+    <li id="shortest-trail">
+      Shortest Trail on Trip: <%= @shortest_trail.name %> |
+      <%= @shortest_trail.length %> miles
+    </li>
+  <% end %>
 </ul>
 <h2>Trails:</h2>
 
