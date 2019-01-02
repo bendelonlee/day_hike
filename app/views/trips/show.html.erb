@@ -4,13 +4,13 @@
   <li>Average Trail Length: <%= @trip.average_length%></li>
   <% if @longest_trail %>
     <li id="longest-trail">
-      Longest Trail on Trip: <%= @longest_trail.name %> |
+      Longest Trail on Trip: <%= link_to @longest_trail.name, trail_path(@longest_trail) %> |
       <%= @longest_trail.length %> miles
     </li>
   <% end %>
   <% if @shortest_trail %>
     <li id="shortest-trail">
-      Shortest Trail on Trip: <%= @shortest_trail.name %> |
+      Shortest Trail on Trip: <%= link_to @shortest_trail.name, trail_path(@shortest_trail) %> |
       <%= @shortest_trail.length %> miles
     </li>
   <% end %>
@@ -21,7 +21,7 @@
   <% @trails.each do |trail| %>
 
     <li id="trail-<%= trail.id %>">
-      <h3><%= trail.name %></h3>
+      <h3><%= link_to trail.name, trail_path(trail) %></h3>
       <ul>
         <li>Start point: <%= trail.address %></li>
         <li><%= trail.length %> miles</li>
