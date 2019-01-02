@@ -1,5 +1,9 @@
 <h1><%= @trip.name %></h1>
+<ul>
+  <li>Total Distance: <%= @trip.total_distance %></li>
+</ul>
 <h2>Trails:</h2>
+
 <ul>
   <% @trails.each do |trail| %>
 

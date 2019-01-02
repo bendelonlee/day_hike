@@ -6,6 +6,7 @@ describe 'the trip show page' do
     trip_1 = Trip.create!(name: "Mixed Trip", trails: [trail_1, trail_2], start_date: 200.days.ago, end_date: 10.days.ago)
     visit trip_path(trip_1)
     expect(page).to have_content(trip_1.name)
+    expect(page).to have_content("Total Distance: 110")
     within "#trail-#{trail_1.id}" do
       expect(page).to have_content(trail_1.name)
       expect(page).to have_content(trail_1.address)
