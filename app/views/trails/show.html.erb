@@ -1,0 +1,22 @@
+<h1><%= @trail.name %></h1>
+<ul>
+  <li>
+    <%= @trail.address %>
+  </li>
+  <li>
+    Total Trips Where This Trail Was Included: <%= @trail.total_trips %>
+  </li>
+</ul>
+
+<h3>Trips: </h3>
+
+<ul>
+  <% @trips.each do |trip| %>
+  <li>
+    <%= trip.name %> |
+    Total Distance:
+    <%= trip.total_distance %>
+    miles
+  </li>
+  <% end %>
+</ul>
